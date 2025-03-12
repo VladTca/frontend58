@@ -1,0 +1,42 @@
+* {
+    text-align: center;
+}
+
+/* эти стили применятся ко всем элементам h1 на странице  */
+h1 {
+    /* изменение цвета */
+    color:darkblue;
+    /* выравнивание текста */
+    text-align: center;
+}
+
+p {
+    color: rgb(173, 69, 8);
+    /* стиль написания курсивом */
+    font-style: italic;
+}
+
+/* селектор по классу (в данном примере - классу desc) */
+/* приоритетнее, чем селектор по тегу */
+
+
+.desc {
+    font-size: 20px;
+    text-decoration: underline;
+    color: rgb(13, 94, 32);
+}
+
+.violet {
+    color: darkorchid;
+}
+
+/* селектор по id, обладает наивысшим приоритетом */
+#heading {
+    color: rgb(139, 66, 61);
+}
+
+/* селектор для всех элементов li внутри ol */
+ol > li {
+    text-align: left;
+    font-weight: 500;
+}
