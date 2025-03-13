@@ -1,0 +1,29 @@
+/* ваше решение здесь */
+.button {
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.green {
+    background-color: #778D45;
+    color: white;
+    margin-right: 10px;
+}
+
+.light-green {
+    background-color: #AEC09A;
+    color: white;
+}
+
+.green:hover,
+.light-green:hover {
+    color: black;
+    cursor: pointer;
+}
