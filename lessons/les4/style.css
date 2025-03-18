@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+ul>li {
+  padding-left: 10px;
+  list-style: none;
+}
+
+ul>li::before {
+  content: '✅ ';
+}
+
+.container {
+  background-color: rgb(157, 157, 255);
+  border: 2px solid black;
+  height: 250px;
+  /* включили flex отображение для родителя позиционируемых элементов */
+  display: flex;
+  /* в flex можно указывать промежуток между элементами (альтернатива для margin) */
+  gap: 5px;
+  /* управления позиционированием по главной оси */
+  justify-content: space-evenly;
+  /* управления позиционированием по поперечной оси */
+  align-items: center;
+  /* меняет оси позиционирования местами */
+  /* вместе с осями меняются и свойства позиционирования */
+  flex-direction: row;
+}
+
+/* значения для позиционирования */
+/* center - по центру */
+/* space-between - равномерно распределяет пространство между */
+/* space-evenly равномерно распределяет пространство вокруг элементов */
+/* start / end - перемещает в начало и конец контейнера */
+
+.container>div {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  /* margin: 10px; */
+  background-color: rgb(215, 255, 155);
+}
+
+/* это правило сработает для всех картинок-потомков .card-container */
+
+.card-container {
+  height: 1100px;
+  border: 2px solid darkblue;
+  /* background-color: rgb(255, 196, 154); */
+  /* добавляем картинку на фон контейнера */
+  background-image: url('https://blickgewinkelt.de/wp-content/uploads/2023/07/Grunewald-Forst.jpg');
+  /* управление позиционированием фона контейнера */
+  background-position: center;
+  /* растягивает картинку по размеру контейнера */
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  /* управляет группой элементов при переносе через flex-wrap */
+  align-content: center;
+}
+
+.card-container>section {
+  background-color: #fff;
+  border: 1px solid darkblue;
+  border-radius: 20px;
+  width: 250px;
+  padding: 10px 20px 30px;
+  /* задаем свойство flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+
+.card-container img {
+  width: 100%;
+}
+
+header {
+  background: #ff4b1f;
+  background: -webkit-linear-gradient(to right, #0093ad, #ff4b1f);
+  background: linear-gradient(to right, #0ba8c4, #ff4b1f);
+  height: 60px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 60px;
+}
+
+header a {
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
