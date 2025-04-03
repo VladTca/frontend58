@@ -1,0 +1,30 @@
+li > span {
+  font-weight: bold;
+}
+
+.btn {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+
+}
+
+#btn-change-h1 {
+  background-color: rgb(148, 81, 177);
+}
+
+#btn-create {
+  background-color: rgb(238, 146, 42);
+}
+
+.btn:hover {
+  border: 1px solid blue;
+}
+
+.dom-text {
+  color: darkolivegreen;
+  text-decoration: underline;
+}
+
