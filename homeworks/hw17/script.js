@@ -6,20 +6,19 @@ const btnClear = document.getElementById('clearButton');
 const inputAmount = document.getElementById('amount');
 
 
-
 async function getProducts() {
     try {
         loader.classList.remove('hide');
         gridContainer.classList.add('hide');
         gridContainer.innerHTML = '';
 
-        let amount = parseInt(inputAmount.value, 10)  ; // Получаем актуальное значение
+        let amount = parseInt(inputAmount.value, 10); // Получаем актуальное значение
 
         const res = await fetch('https://fakestoreapi.com/products');
         if (!res.ok) throw new Error(`status: ${res.status} ${res.statusText || ''}`);
 
         const data = await res.json();
-        if(isNaN(amount)){
+        if (isNaN(amount)) {
             amount = data.length;
         }
         data.slice(0, amount).forEach(product => {
@@ -52,7 +51,7 @@ btnSubmit.addEventListener('click', (event) => {
 });
 
 
-btnReset.addEventListener('click', ()=> {
+btnReset.addEventListener('click', () => {
     // убирает hide (когда этот класс есть)
     loader.classList.toggle('hide')
     // добавляет hide (когда этого класса нет)
