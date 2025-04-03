@@ -1,10 +1,17 @@
-document.getElementById("nameForm").addEventListener("submit", async function(event) {
-    event.preventDefault();
-    const name = document.getElementById("nameInput").value.trim();
-    if (!name) return;
+const nForm = document.getElementById("nameForm");
 
-    const response = await fetch(`https://api.genderize.io/?name=${name}`);
-    const data = await response.json();
+async function getGender(name) {
+    const res = await fetch(`https://api.genderize.io/?name=${name}`);
+    const data = await res.json();
+    return data;
+}
+
+nForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const nameInput = document.getElementById("nameInput").value.trim();
+    if (!nameInput) return;
+
+    const data = await getGender(nameInput);
 
     document.getElementById("result").innerHTML = `
         <p><strong>Имя:</strong> ${data.name}</p>
