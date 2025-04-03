@@ -3,6 +3,7 @@ const nForm = document.getElementById("nameForm");
 async function getGender(name) {
     const res = await fetch(`https://api.genderize.io/?name=${name}`);
     const data = await res.json();
+    console.log(data);
     return data;
 }
 
