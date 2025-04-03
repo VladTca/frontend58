@@ -11,6 +11,9 @@ input, button {
     background: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 128, 0, 0.5), rgba(0, 0, 255, 0.5));
     
 }
+input::placeholder {
+    color: #48517c;
+}
 button {
     background: linear-gradient(to left, red 20%, green 50%, blue 80%);
 
