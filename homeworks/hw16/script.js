@@ -8,15 +8,39 @@ async function getGender(name) {
 
 nForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
     const nameInput = document.getElementById("nameInput").value.trim();
-    if (!nameInput) return;
 
-    const data = await getGender(nameInput);
+    if (!nameInput) {
+        alert("Пожалуйста, введите имя.");
+        return;
+    }
 
-    document.getElementById("result").innerHTML = `
-        <p><strong>Имя:</strong> ${data.name}</p>
-        <p><strong>Пол:</strong> ${data.gender ? data.gender : "Не определено"}</p>
-        <p><strong>Вероятность:</strong> ${data.probability * 100}%</p>
-        <p><strong>Количество записей:</strong> ${data.count}</p>
-    `;
+    try {
+        const data = await getGender(nameInput);
+
+        const name = data.name || "Неизвестно";
+        const gender = data.gender ? data.gender : "Не определено";
+        const probability = data.probability ? (data.probability * 100).toFixed(2) + "%" : "Недоступно";
+        const count = data.count || "Неизвестно";
+
+        const resultContainer = document.getElementById("result");
+        resultContainer.innerHTML = `
+            <p><strong>Имя:</strong> ${name}</p>
+            <p><strong>Пол:</strong> ${gender}</p>
+            <p><strong>Вероятность:</strong> ${probability}</p>
+            <p><strong>Количество записей:</strong> ${count}</p>
+        `;
+
+        const clearButton = document.getElementById("clearButton");
+
+        clearButton.addEventListener("click", () => {
+            document.getElementById("nameInput").value = "";
+            document.getElementById("result").innerHTML = "";
+        });
+    } catch (error) {
+        console.error("Ошибка при получении данных от API:", error);
+        alert("Произошла ошибка при обработке запроса. Пожалуйста, попробуйте снова позже.");
+    }
 });
+
