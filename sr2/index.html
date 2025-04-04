@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty & Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet" />
+  <script defer src="script-beautytech.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Beauty & Tech</div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beauty & Tech</a></li>
+      <li><a href="wearcarry.html">Wear & Carry</a></li>
+    </ul>
+    <div id="cart-button" class="cart">🛒 <span id="cart-count">0</span></div>
+    <div class="burger-menu">☰</div>
+  </nav>
+</header>
+
+<main>
+  <form id="products-form">
+    <label for="limit">Количество продуктов (1-30):</label>
+    <input type="number" id="limit" required>
+    <button type="submit">Загрузить продукты</button>
+    <div id="validation-error" class="error-message" style="display:none;"></div>
+  </form>
+
+  <div id="loader" class="loader" style="display:none;">😁</div>
+
+  <section id="products-list"></section>
+
+  <div id="server-error" class="error-message" style="display:none;"></div>
+</main>
+
+<div id="cart-modal">
+  <h3>Корзина</h3>
+  <div id="cart-modal-content"></div>
+  <div id="modal-buttons">
+  <button id="cart-modal-close">Закрыть</button>
+  <button id="cart-modal-clear">Очистить</button>
+
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Beauty & Tech
+</footer>
+
+</body>
+</html>

@@ -52,13 +52,20 @@ btnSubmit.addEventListener('click', (event) => {
 
 
 btnReset.addEventListener('click', () => {
-    // убирает hide (когда этот класс есть)
-    loader.classList.toggle('hide')
-    // добавляет hide (когда этого класса нет)
-    gridContainer.classList.toggle('hide')
-    setTimeout(getProducts, 1500)
-})
+    if (loader.classList.contains('hide')) {
+        loader.classList.remove('hide');
+        gridContainer.classList.add('hide');
+    } else {
+        loader.classList.add('hide');
+        gridContainer.classList.remove('hide');
+    }
 
+    setTimeout(() => {
+        getProducts().catch(error => {
+            console.error('Ошибка при загрузке продуктов:', error.message);
+        });
+    }, 1500);
+});
 btnClear.addEventListener('click', () => {
-    gridContainer.innerHTML = ''; // Очищаем поле
+    gridContainer.innerHTML = '';
 });
